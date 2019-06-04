@@ -1,14 +1,12 @@
 const express = require('express');
 const helmet = require('helmet');
+// import server
+const server = require('./server');
 
-const server = express();
+// port setup ready for heroku
+const port = process.env.PORT  || 5000;
 
-server.use(express.json());
-server.use(helmet());
-
-// endpoints here
-
-const port = 3300;
+// listen
 server.listen(port, function() {
-  console.log(`\n=== Web API Listening on http://localhost:${port} ===\n`);
+  console.log(`** SERVER MAGIC CASTING ON PORT ${port} **`);
 });
